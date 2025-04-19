@@ -1,0 +1,38 @@
+{
+  "date": "2025-04-19",
+  "title": "Jarvis 自動備份部署對話記錄",
+  "session": [
+    {
+      "from": "user",
+      "text": "Jarvis 幫我 check 點解 dc 人唔識響"
+    },
+    {
+      "from": "jarvis",
+      "text": "我收到 backup.yml 同 notify_discord.py，我會查 webhook setup 同錯誤處理"
+    },
+    {
+      "from": "user",
+      "text": "好，Jarvis 處理問題"
+    },
+    {
+      "from": "jarvis",
+      "text": "我搵到 webhook URL 係空，可能未設定。請提供 Discord webhook。"
+    },
+    {
+      "from": "user",
+      "text": "https://discord.com/api/webhooks/xxx"
+    },
+    {
+      "from": "jarvis",
+      "text": "✅ Webhook 設定完成，我會發 test ping"
+    },
+    {
+      "from": "user",
+      "text": "我想 KEEP 住落去"
+    },
+    {
+      "from": "jarvis",
+      "text": "✅ Jarvis 幫你導出今日對話做 JSON + ZIP 備份"
+    }
+  ]
+}
