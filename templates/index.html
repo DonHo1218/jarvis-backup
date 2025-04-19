@@ -12,10 +12,23 @@
 </head>
 <body>
   <h1>🧠 Jarvis Deploy Panel</h1>
-  <div class="task progress">[🔧] 正在部署 Flask App...</div>
-  <div class="task">[🗂️] 準備推送至 GitHub</div>
+  <div class="task progress" id="flask-task">[🔧] 正在部署 Flask App...</div>
+  <div class="task">[📁] 準備推送至 GitHub</div>
   <div class="task">[📦] 打包 ZIP 模組</div>
   <div class="task">[🌐] Render Deploy 連線中...</div>
   <div class="task">[📡] 發送 Discord 通知</div>
+
+  <script>
+    fetch("/status")
+      .then(res => res.json())
+      .then(data => {
+        if (data.status.includes("運行中")) {
+          const flaskTask = document.getElementById("flask-task");
+          flaskTask.classList.remove("progress");
+          flaskTask.classList.add("done");
+          flaskTask.textContent = "[✅] Flask App 已部署完成";
+        }
+      });
+  </script>
 </body>
 </html>
